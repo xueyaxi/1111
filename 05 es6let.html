@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+
+<body>
+    <script>
+
+        //let 声明特点
+        //1. 不允许重复声明
+        // let star = "bjt";
+        // let star = "bjt";
+
+        //2. 块儿级作用域  全局作用域, 函数作用域, eval作用域
+        // if(true){
+        //     let girlFriend = "周扬青";
+        //     console.log(girlFriend); //可以访问到
+        // }
+        // {
+        //     let songs = '狐狸精';
+        //     let girlFriend = '女朋友';
+        // }
+       // console.log(girlFriend) 报错
+
+        //3. 不存在变量提升//放在前面会报错
+        // console.log(wudao);
+        // let wudao = '精武门';
+        
+        //4. 不影响作用域链
+        //以后都使用let
+        {
+            let school = "尚硅谷";
+            function fn() {
+                //自己没有沿着作用域链向上找
+                console.log(school);
+            }
+            fn();
+        }
+
+    </script>
+</body>
+
+</html>

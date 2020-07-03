@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const 定义常量</title>
+</head>
+<body>
+    <script>
+        //const 用来声明一个常量
+       // const A = 100;
+        // console.log(A);
+        //1. 声明的时候一定要赋初始值
+        // const B; //X 
+        
+        //2. 常量的名称一般为 『大写』 潜规则
+        // const a = 200; //X
+
+        //3. 不能修改常量的值
+        // const PLAYER = "UZI";
+        // PLAYER = '小狗';//  X
+
+        //4. 不允许重复声明
+        // const PLAYER = '小狗';//X
+
+        //5. 块儿级作用域 外部不能访问
+        // {
+        //     const C = 200;
+        // }
+
+        //6. 关于数组和对象的元素的修改
+        //  Const数组或对象一旦创建 他们的内存地址不能再改变 
+        // 但是可以通过一定的方式修改数组或者元素中的值
+        // const TEAM = ['UZI','MLXG','Letme'];
+        // TEAM.push('xiaohu');
+        // const SCHOOL = {
+        //     name: '尚硅谷'
+        // }
+        // SCHOOL.name = 'ATGUIGU';
+        // SCHOOL.age = 18;
+        // console.log(SCHOOL) //可以
+       // SCHOOL = {name:'wy'}; 不可以这样修改
+        
+           //const 用来声明一个常量
+           const A = 100;
+        // console.log(A);
+        //1. 声明的时候一定要赋初始值
+        // const B; //X 
+        
+        //2. 常量的名称一般为 『大写』 潜规则
+        // const a = 200; //X
+
+        //3. 不能修改常量的值
+        // const PLAYER = "UZI";
+        // PLAYER = '小狗';//  X
+
+        //4. 不允许重复声明
+        // const PLAYER = '小狗';//X
+
+        //5. 块儿级作用域 外部不能访问
+        // {
+        //     const C = 200;
+        // }
+
+        //6. 关于数组和对象的元素的修改
+        //  Const数组或对象一旦创建 他们的内存地址不能再改变 
+        // 但是可以通过一定的方式修改数组或者元素中的值
+        const TEAM = ['UZI','MLXG','Letme'];
+        TEAM.push('xiaohu');
+        const SCHOOL = {
+            name: '尚硅谷'
+        }
+        SCHOOL.name = 'ATGUIGU';
+        SCHOOL.age = 18;
+        console.log(SCHOOL) //可以
+       // SCHOOL = {name:'wy'}; 不可以这样修改
+
+    </script>
+</body>
+</html>

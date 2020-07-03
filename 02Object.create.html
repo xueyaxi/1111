@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create</title>
+</head>
+
+<body>
+    <script>
+        var car = {
+            name: '汽车'
+        };
+        //Object.create(参数1（原型对象），参数2（描述属性的对象）)
+        //参数2对象可以有的
+        // * value : 指定值
+        // * writable : 标识当前属性值是否是可修改的, 默认为 false
+        // * configurable：标识当前属性是否可以被删除 默认为 false
+        // * enumerable：标识当前属性是否能用for in 枚举 默认为 false
+        // * get:   当获取当前属性时的回调函数
+        // * set:   当设置当前属性时
+        //  get 和set的属性值是函数 get函数可以返回一个值
+
+        //这个hofo对象的原型对象是car
+        // var hafo = Object.create(car, {
+        //     //品牌属性
+        //     brand: {
+        //         //属性值
+        //         value: '哈佛',
+        //         //是否可以修改  write 写
+        //         writable: false,
+        //         //是否可以删除  config 配置
+        //         configurable: false,
+        //         //是否可以枚举(遍历)
+        //         enumerable: false
+        //     },
+        //     //添加价格属性
+        //     price: {
+        //         //是否可以删除  config 配置
+        //         configurable: false,
+        //         //是否可以枚举(遍历)
+        //         enumerable: false,
+        //         //get 和 set 有自己独有自动执行的时机  
+        //         // 当获取对象的 price 属性的时候, 会触发 get 方法
+        //         get: function () {
+        //             // console.log("price属性被获取了");
+        //             //动态获取
+        //             return this.jiage;
+        //         },
+        //         // 当对对象的 price 属性进行赋值的时候, 会触发 set 方法
+        //         set: function (newValue) {
+        //             // console.log("price属性被赋值啦!!");
+        //             //检测新的值是否合法  "i love you"
+        //         //添加新的属性价格
+        //             this.jiage = newValue; // this指向的值新的对象(hafo)
+        //         }
+        //     }
+        // });
+
+
+        var hafo = Object.create(car, {
+            //品牌属性
+            brand: {
+                //属性值
+                value: '哈佛',
+                //是否可以修改  write 写
+                writable: false,
+                //是否可以删除  config 配置
+                configurable: true,
+                //是否可以枚举(遍历)
+                enumerable:true
+            },
+            //添加价格属性
+            price: {
+                //是否可以删除  config 配置
+                configurable: false,
+                //是否可以枚举(遍历)
+                enumerable: false,
+                //get 和 set 有自己独有自动执行的时机  
+                // 当获取对象的 price 属性的时候, 会触发 get 方法
+                get: function () {
+                    // console.log("price属性被获取了");
+                    //动态获取
+                    return this.jiage;
+                },
+                // 当对对象的 price 属性进行赋值的时候, 会触发 set 方法
+                set: function (newValue) {
+                    // console.log("price属性被赋值啦!!");
+                    //检测新的值是否合法  "i love you"
+                //添加新的属性价格
+                    this.jiage = newValue; // this指向的值新的对象(hafo)
+                }
+            }
+        });
+        
+
+        //关于配置属性
+        //检测是否可写
+        hafo.brand = '长城';
+        //检测是否可以删除
+        delete hafo.brand;
+        //检测是否可以枚举
+        for (var i in hafo) {
+            // console.log(i);
+        }
+        // console.log(hafo);
+
+        //关于 get 和 set
+        hafo.price = 200000;
+        console.log(hafo.price);
+
+        console.log(hafo);
+//对象的结构
+// Object
+// jiage: 200000
+// brand: "哈佛"
+// price: (...)
+// get price: ƒ ()
+// set price: ƒ (newValue)
+// __proto__: Object
+    </script>
+</body>
+
+</html>

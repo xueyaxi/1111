@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>严格模式</title>
+    <script src=''></script>
+</head>
+<body>
+    <script>
+        //严格模式的三种声明方式
+         "use strict";
+        // function fn() {
+        //   "use strict";
+        //  }
+        //  (function(){
+        //     "use strict";
+        //  })();
+
+        //"use strict";
+        // function fn() {
+        //   "use strict";
+        //  }
+        //  (function(){
+        //     "use strict";
+        //  })();
+    
+        //不允许使用未声明的变量 不声明会报错
+       var school = "尚硅谷";
+        console.log(school);
+
+        var school = "尚硅谷";
+        console.log(school);
+        //2) 函数内部的 this 不指向 window this是undefined 
+        // function fn(){
+        //     console.log(this);
+        // }
+        // fn();
+
+          // function fn(){
+        //     console.log(this);
+        // }
+        // fn();
+    
+        //3) eval 作用域   eval 是一个函数, 将js参数字符串进行解析并执行
+        // eval会创建自己的作用域  在严格模式下eval内部创建的变量eavl外部不可以访问
+        // alert("今天天气不错!!");
+        // eval("alert('今天天气不错哦')");
+        // eval("var school = 'ATGUIGU';");
+        // console.log(school); //在非严格模式下可以读到这个变量 但是严格模式下报错
+
+         // alert("今天天气不错!!");
+        // eval("alert('今天天气不错哦')");
+        // eval("var school = 'ATGUIGU';");
+        // console.log(school);
+        //4) 对象不能有重复的属性
+        // var school = {
+        //     name: '尚硅谷',
+        //     name: 'ATGUIGU'
+        // }
+        // console.log(school);//有重复的属性会报错
+
+          // var school = {
+        //     name: '尚硅谷',
+        //     name: 'ATGUIGU'
+        // }
+        // console.log(school);
+        //5) 严格模式下 函数不允许有同名的形参
+        // function add(a,a,a){
+        // }
+
+          // function add(a,a,a){
+        // }
+        //6) 新增一些保留字
+        //严格模式下 不能使用
+       // implements interface private protected public
+       // var public = "测试";
+
+         // var public = "测试";
+    </script>
+</body>
+</html>
